@@ -12,28 +12,20 @@ class PracticesController < ApplicationController
   def show
   end
 
-  # GET /practices/new
   def new
     @practice = Practice.new
   end
 
-  # GET /practices/1/edit
   def edit
   end
 
-  # POST /practices
-  # POST /practices.json
   def create
     @practice = Practice.new(practice_params)
-
-    respond_to do |format|
-      if @practice.save
-        format.html { redirect_to @practice, notice: 'Practice was successfully created.' }
-        format.json { render :show, status: :created, location: @practice }
-      else
-        format.html { render :new }
-        format.json { render json: @practice.errors, status: :unprocessable_entity }
-      end
+    #@practice.user_id = current_user.id
+    if @practice.save
+      redirect_to practices_path, notice: '練習記録を登録しました!!'
+    else
+      render 'new'
     end
   end
 
