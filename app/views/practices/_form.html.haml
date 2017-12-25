@@ -1,0 +1,23 @@
+= simple_form_for @practice, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :day
+  = f.error_span :day
+  = f.input :distance
+  = f.error_span :distance
+  = f.input :hour
+  = f.error_span :hour
+  = f.input :minute
+  = f.error_span :minute
+  = f.input :second
+  = f.error_span :second
+  = f.input :content
+  = f.error_span :content
+  = f.input :weight
+  = f.error_span :weight
+  = f.input :heart_rate
+  = f.error_span :heart_rate
+  = f.input :avatar
+  = f.error_span :avatar
+  = f.input :avatar_cache
+  = f.error_span :avatar_cache
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), practices_path, :class => 'btn btn-default'

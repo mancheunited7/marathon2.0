@@ -1,0 +1,49 @@
+- model_class = Practice
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:day) + ':'
+  %br
+  = @practice.day
+%p
+  %strong= model_class.human_attribute_name(:distance) + ':'
+  %br
+  = @practice.distance
+%p
+  %strong= model_class.human_attribute_name(:hour) + ':'
+  %br
+  = @practice.hour
+%p
+  %strong= model_class.human_attribute_name(:minute) + ':'
+  %br
+  = @practice.minute
+%p
+  %strong= model_class.human_attribute_name(:second) + ':'
+  %br
+  = @practice.second
+%p
+  %strong= model_class.human_attribute_name(:content) + ':'
+  %br
+  = @practice.content
+%p
+  %strong= model_class.human_attribute_name(:weight) + ':'
+  %br
+  = @practice.weight
+%p
+  %strong= model_class.human_attribute_name(:heart_rate) + ':'
+  %br
+  = @practice.heart_rate
+%p
+  %strong= model_class.human_attribute_name(:avatar) + ':'
+  %br
+  = @practice.avatar
+%p
+  %strong= model_class.human_attribute_name(:avatar_cache) + ':'
+  %br
+  = @practice.avatar_cache
+
+
+= link_to t('.back', :default => t("helpers.links.back")), practices_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_practice_path(@practice), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), practice_path(@practice), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
