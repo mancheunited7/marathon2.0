@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  day: 2017-12-25
+  prefecture_code: 1
+  distance: 1
+  competition_name: MyString
+  hour: 1
+  minute: 1
+  second: 1
+  calctime: 1
+  content: MyText
+  avatar: MyString
+  avatar_cache: MyString
+  point: 1
+
+two:
+  user_id: 1
+  day: 2017-12-25
+  prefecture_code: 1
+  distance: 1
+  competition_name: MyString
+  hour: 1
+  minute: 1
+  second: 1
+  calctime: 1
+  content: MyText
+  avatar: MyString
+  avatar_cache: MyString
+  point: 1

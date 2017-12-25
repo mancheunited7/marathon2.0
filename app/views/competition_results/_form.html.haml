@@ -1,0 +1,20 @@
+= simple_form_for(@competition_result) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :user_id
+    = f.input :day
+    = f.input :prefecture_code
+    = f.input :distance
+    = f.input :competition_name
+    = f.input :hour
+    = f.input :minute
+    = f.input :second
+    = f.input :calctime
+    = f.input :content
+    = f.input :avatar
+    = f.input :avatar_cache
+    = f.input :point
+
+  .form-actions
+    = f.button :submit

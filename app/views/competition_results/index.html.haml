@@ -1,0 +1,45 @@
+%h1 Listing competition_results
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Day
+      %th Prefecture code
+      %th Distance
+      %th Competition name
+      %th Hour
+      %th Minute
+      %th Second
+      %th Calctime
+      %th Content
+      %th Avatar
+      %th Avatar cache
+      %th Point
+      %th
+      %th
+      %th
+
+  %tbody
+    - @competition_results.each do |competition_result|
+      %tr
+        %td= competition_result.user_id
+        %td= competition_result.day
+        %td= competition_result.prefecture_code
+        %td= competition_result.distance
+        %td= competition_result.competition_name
+        %td= competition_result.hour
+        %td= competition_result.minute
+        %td= competition_result.second
+        %td= competition_result.calctime
+        %td= competition_result.content
+        %td= competition_result.avatar
+        %td= competition_result.avatar_cache
+        %td= competition_result.competition_point
+        %td= link_to 'Show', competition_result
+        %td= link_to 'Edit', edit_competition_result_path(competition_result)
+        %td= link_to 'Destroy', competition_result, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Competition result', new_competition_result_path

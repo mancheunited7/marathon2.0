@@ -1,0 +1,45 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @competition_result.user_id
+%p
+  %b Day:
+  = @competition_result.day
+%p
+  %b Prefecture code:
+  = @competition_result.prefecture_code
+%p
+  %b Distance:
+  = @competition_result.distance
+%p
+  %b Competition name:
+  = @competition_result.competition_name
+%p
+  %b Hour:
+  = @competition_result.hour
+%p
+  %b Minute:
+  = @competition_result.minute
+%p
+  %b Second:
+  = @competition_result.second
+%p
+  %b Calctime:
+  = @competition_result.calctime
+%p
+  %b Content:
+  = @competition_result.content
+%p
+  %b Avatar:
+  = @competition_result.avatar
+%p
+  %b Avatar cache:
+  = @competition_result.avatar_cache
+%p
+  %b Point:
+  = @competition_result.point
+
+= link_to 'Edit', edit_competition_result_path(@competition_result)
+\|
+= link_to 'Back', competition_results_path
