@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 20171225042005) do
   enable_extension "plpgsql"
 
   create_table "practices", force: :cascade do |t|
-    t.date "day"
-    t.integer "distance"
-    t.integer "hour"
-    t.integer "minute"
-    t.integer "second"
-    t.text "content"
+    t.integer "user_id", null: false
+    t.date "day", null: false
+    t.integer "distance", null: false
+    t.integer "hour", null: false
+    t.integer "minute", null: false
+    t.integer "second", null: false
+    t.text "content", null: false
     t.integer "weight"
     t.integer "heart_rate"
     t.string "avatar"
