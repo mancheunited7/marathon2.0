@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171225042005) do
+ActiveRecord::Schema.define(version: 20171225131859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "competition_results", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.date "day", null: false
+    t.integer "prefecture_code", null: false
+    t.integer "distance", null: false
+    t.string "competition_name", null: false
+    t.integer "hour", null: false
+    t.integer "minute", null: false
+    t.integer "second", null: false
+    t.integer "calctime"
+    t.integer "heart_rate"
+    t.text "content", default: "", null: false
+    t.string "avatar"
+    t.string "avatar_cache"
+    t.integer "competition_point", null: false
+    t.text "competition_memo", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "practices", force: :cascade do |t|
     t.integer "user_id", null: false
