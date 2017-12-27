@@ -1,3 +1,60 @@
 // Place all the styles related to the tops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top_gazo{
+  position: relative;
+}
+
+.top_gazo p{
+  position:absolute;
+  color:#0000ff;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  font-weight: bold;
+  font-size: 4em;
+  font-family: Quicksand, sans-serif;
+  text-shadow: 0px 3px 0px #b2a98f,
+               0px 14px 10px rgba(0,0,0,0.15),
+               0px 24px 2px rgba(0,0,0,0.1),
+               0px 34px 30px rgba(0,0,0,0.1);
+}
+
+.image_area{
+  width: 100%;
+}
+
+.inline-block{
+  display:inline-block;
+  vertical-align: top;
+  margin-left: 8px;
+}
+
+.info{
+  width:450px;
+  height:270px;
+  background-color: #FCE8E7;
+  padding: 20px;
+  overflow:scroll;
+  line-height: 2;
+}
+
+.info li{
+   list-style: none;
+}
+
+.ranking{
+  width:450px;
+  height:270px;
+  background-color: lightblue;
+  padding: 20px;
+  overflow:scroll;
+  line-height: 2;
+}
+
+.ranking li{
+   list-style: none;
+}
