@@ -1,12 +1,25 @@
 .top_gazo
-  = image_tag("背景2.jpeg", class:"image_area",size:"350")
-  %p 〜マラソン2.0〜
+  = image_tag("背景2.jpeg", class:"image_area",size:"300")
+  %p 「走る」って楽しい!!
 .inline-block
-  %h3 今日のニュース
-  %a.twitter-timeline{"data-lang" => "ja", "data-theme" => "light", "data-width" => "600", :href => "https://twitter.com/LongDis05749258/lists/list?ref_src=twsrc%5Etfw"}
-  %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
-.inline-block
-  %h3 大会情報
+  %h3 新着情報
   %ul.info
     %li 新着情報！！
     %li リユーアルしたよ！！
+.inline-block
+  %h3 ランニングニュース
+  %a.twitter-timeline{"data-lang" => "ja", "data-theme" => "light", "data-width" => "450", "data-height" => "270", :href => "https://twitter.com/LongDis05749258/lists/list?ref_src=twsrc%5Etfw"}
+  %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
+.inline-block
+  %h3 各ランキング トップ５
+  %ul.ranking
+    %h4 ランニングレベル
+    %ul.level
+      %li 1位
+      %li 2位
+      %li 3位
+    %h4 アイテムコレクター
+    %ul.item
+      %li 1位
+      %li 2位
+      %li 3位
