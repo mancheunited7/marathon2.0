@@ -1,0 +1,19 @@
+.form-wrapper
+  %h2 パスワード変更
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+    = devise_error_messages!
+    = f.hidden_field :reset_password_token
+    .form-item
+      /
+        <haml_loud> f.label :password, &quot;New password&quot; </haml_loud><br />
+        <haml_silent>       if @minimum_password_length
+        </haml_silent><haml_block>        <em>(<haml_loud> @minimum_password_length </haml_loud> characters minimum)</em><br />
+        </haml_block>
+      = f.password_field :password, autofocus: true, autocomplete: "off",placeholder: "パスワード"
+    .form-item
+      / <haml_loud> f.label :password_confirmation, &quot;Confirm new password&quot; </haml_loud><br />
+      = f.password_field :password_confirmation, autocomplete: "off",placeholder:"パスワード確認"
+    .button-panel
+      = f.submit "パスワード変更",class: "button"
+  .form-footer
+    = render "devise/shared/links"
