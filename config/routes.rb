@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   resources :mypages, only:[:index]
   resources :practices, except:[:index]
   resources :competition_results, except:[:index]
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

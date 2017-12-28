@@ -4,11 +4,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :userid,             null: false, default: ""
-      t.string :provider,           null: false, default: ""
-      t.string :image_url
-      t.string :name
-      t.string :avatar
 
       ## Recoverable
       t.string   :reset_password_token
@@ -21,14 +16,20 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.integer  :sign_in_count, default: 0, null: false
       t.datetime :current_sign_in_at
       t.datetime :last_sign_in_at
-      t.string   :current_sign_in_ip
-      t.string   :last_sign_in_ip
+      t.inet     :current_sign_in_ip
+      t.inet     :last_sign_in_ip
 
-      ## Confirmable
-      # t.string   :confirmation_token
-      # t.datetime :confirmed_at
-      # t.datetime :confirmation_sent_at
-      # t.string   :unconfirmed_email # Only if using reconfirmable
+
+      t.string   :uid,                    default: "", null: false
+      t.string   :provider,               default: "", null: false
+      t.string   :image_url
+      t.string   :name
+      t.string   :avatar
+      # Confirmable
+      t.string   :confirmation_token
+      t.datetime :confirmed_at
+      t.datetime :confirmation_sent_at
+      t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
@@ -38,10 +39,21 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       t.timestamps null: false
     end
-
-    add_index :users, [:email, :provider, :userid], unique: true
     add_index :users, :reset_password_token, unique: true
-    # add_index :users, :confirmation_token,   unique: true
+    add_index :users, [:email, :uid, :provider], unique: true
+
+
+    create_table :sessions do |t|
+      t.string :session_id, :null => false
+      t.text :data
+      t.timestamps
+    end
+
+    add_index :sessions, :session_id, :unique => true
+    add_index :sessions, :updated_at
+
+
+
     # add_index :users, :unlock_token,         unique: true
   end
 end
