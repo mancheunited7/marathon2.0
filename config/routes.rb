@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'top#index'
 
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
   resources :mypages, only:[:index]
   resources :practices, except:[:index]
   resources :competition_results, except:[:index]
