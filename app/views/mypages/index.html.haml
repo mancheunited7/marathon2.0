@@ -1,0 +1,31 @@
+%h2= #{current_user.name}さんのページ
+%h3 練習の記録一覧
+%table
+  %tr
+    %th 練習日
+    %th 走った距離
+    %th タイム
+    %th 練習内容
+  = @practices.each do |practice|
+    %tr
+      %th practice.day
+      %th practice.distance
+      %th
+      %th practice.content
+%h3 大会記録一覧
+%table
+  %tr
+    %th 開催日
+    %th 開催場所
+    %th 走った距離
+    %th タイム
+    %th 思い出
+    %th 大会評価
+  = @competition_results.each do |result|
+    %tr
+      %th result.day
+      %th result.place
+      %th result.distance
+      %th
+      %th result.content
+      %th result.competition_point
