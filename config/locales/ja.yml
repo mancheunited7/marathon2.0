@@ -232,7 +232,7 @@ ja:
         instagram_login: instagramログイン
   practices:
     new:
-      title: 練習記録を保存しよう
+      title: 練習の記録を保存しよう
       competition_day: 練習日を設定しよう
       run_distance: 走った距離を記録しよう
       run_time: 走った時間を記録しよう
