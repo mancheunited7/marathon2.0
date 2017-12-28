@@ -21,9 +21,9 @@ class PracticesController < ApplicationController
 
   def create
     @practice = Practice.new(practice_params)
-    #@practice.user_id = current_user.id
+    @practice.user_id = current_user.id
     if @practice.save
-      redirect_to practices_path, notice: '練習記録を登録しました!!'
+      redirect_to mypages_path, notice: '練習記録を登録しました!!'
     else
       render 'new'
     end

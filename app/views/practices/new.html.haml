@@ -1,36 +1,37 @@
-%h2= t '.title'
-= form_for(@practice) do |f|
-  - if @practice.errors.any?
-    #error_explanation.alert.alert-danger
-      %h2= @practice.errors.count.to_s + "件のエラーがあります。"
-      %ul
-      - @practice.errors.full_messages.each do |msg|
-        %li = msg
-  %br/
-  .field
-    %h4= f.label :"#{t '.competition_day'}"
-    = raw sprintf(f.date_select(:day, {start_year: Time.now.year - 1,end_year: Time.now.year, order: [ :year, :month, :day ], use_month_numbers: true, date_separator:    '%s'}, {class: "form-control input-lg bootstrap-dt"}),'年 ', '月 ') + '日'
-  .field
-    %h4= f.label :"#{t '.run_distance'}"
-    = f.text_field :distance, placeholder: "km", class: "form-control input-lg bootstrap-dhw"
-  .field
-    %h4= f.label :"#{t '.run_time'}"
-    = f.number_field :hour, class: "form-control input-lg bootstrap-dt", placeholder: "時間", min:0
-    時間
-    \#{f.number_field :minute, class: "form-control input-lg bootstrap-dt", placeholder: "分",min: 0 ,max: 60}分
-    \#{f.number_field :second, class: "form-control input-lg bootstrap-dt", placeholder: "秒",min: 0 ,max: 60}秒
-  .field
-    %h4= f.label :"#{t '.heart_rate'}"
-    = f.number_field :heart_rate, class: "form-control input-lg bootstrap-dhw"
-  .field
-    %h4= f.label :"#{t '.after_weight'}"
-    = f.number_field :weight, placeholder: "kg", class: "form-control input-lg bootstrap-dhw"
-  .field
-    %h4= f.label :"#{t '.paractice_content'}"
-    = f.text_area :content,rows: "5" , class: "form-control input-lg"
-  .field
-    %h4= f.label :"#{t '.practice_photo'}"
-    = f.file_field :avatar
-    = f.hidden_field :avatar_cache
-  .button-field
-    = f.submit "#{t '.title'}", class: "btn btn-lg btn-block bootstrap-sb"
+.pracrice_form
+  %h2= t '.title'
+  = form_for(@practice) do |f|
+    - if @practice.errors.any?
+      #error_explanation.alert.alert-danger
+        %h2= @practice.errors.count.to_s + "件のエラーがあります。"
+        %ul
+        - @practice.errors.full_messages.each do |msg|
+          %li = msg
+    %br/
+    .field
+      %h4= f.label :"#{t '.competition_day'}"
+      = raw sprintf(f.date_select(:day, {start_year: Time.now.year - 1,end_year: Time.now.year, order: [ :year, :month, :day ], use_month_numbers: true, date_separator: '%s'}, {class: "form-control input-lg date_time"}),'年 ', '月 ') + '日'
+    .field
+      %h4= f.label :"#{t '.run_distance'}"
+      = f.text_field :distance, placeholder: "km", class: "form-control input-lg distance_heartrate_weight"
+    .field
+      %h4= f.label :"#{t '.run_time'}"
+      = f.number_field :hour, class: "form-control input-lg date_time", placeholder: "時間", min:0
+      時間
+      \#{f.number_field :minute, class: "form-control input-lg date_time", placeholder: "分",min: 0 ,max: 60}分
+      \#{f.number_field :second, class: "form-control input-lg date_time", placeholder: "秒",min: 0 ,max: 60}秒
+    .field
+      %h4= f.label :"#{t '.heart_rate'}"
+      = f.number_field :heart_rate, class: "form-control input-lg distance_heartrate_weight"
+    .field
+      %h4= f.label :"#{t '.after_weight'}"
+      = f.number_field :weight, placeholder: "kg", class: "form-control input-lg distance_heartrate_weight"
+    .field
+      %h4= f.label :"#{t '.paractice_content'}"
+      = f.text_area :content,rows: "5" , class: "form-control input-lg content"
+    .field
+      %h4= f.label :"#{t '.practice_photo'}"
+      = f.file_field :avatar
+      = f.hidden_field :avatar_cache
+    .button-field
+      = f.submit "#{t '.title'}", class: "btn btn-lg btn_submit"
