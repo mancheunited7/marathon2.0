@@ -15,7 +15,7 @@
   margin:0;
   padding:0;
   font-weight: bold;
-  font-size: 4em;
+  font-size: 3.4em;
   font-family: Quicksand, sans-serif;
   text-shadow: 0px 3px 0px #b2a98f,
                0px 14px 10px rgba(0,0,0,0.15),
@@ -30,13 +30,12 @@
 .inline-block{
   display:inline-block;
   vertical-align: top;
-  margin-left: 8px;
+  margin-left: 15px;
 }
 
 .info{
   width:450px;
-  height:270px;
-  background-color: #FCE8E7;
+  height:280px;
   padding: 20px;
   overflow:scroll;
   line-height: 2;
@@ -48,8 +47,7 @@
 
 .ranking{
   width:450px;
-  height:270px;
-  background-color: lightblue;
+  height:280px;
   padding: 20px;
   overflow:scroll;
   line-height: 2;
