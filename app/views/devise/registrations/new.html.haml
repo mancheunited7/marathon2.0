@@ -7,14 +7,11 @@
     .form-item
       = f.text_field :name, placeholder: "ユーザー名"
     .form-item
-      = f.label :password
       - if @minimum_password_length
-        %em
-        (#{@minimum_password_length}文字以上)
-      = f.password_field :password, autocomplete: "off", placeholder: "パスワード"
+        = f.password_field :password, autocomplete: "off", placeholder: "パスワード(#{@minimum_password_length}文字以上)"
     .form-item
       = f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワード確認"
     .button-panel
-      = f.submit "#{t '.title'}", class: "button"
+      = f.submit "#{t '.title'}", class: "btn btn-default btn-block fl_gh"
   .form-footer
     = render "devise/shared/links"
