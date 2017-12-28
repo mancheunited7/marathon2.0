@@ -7,6 +7,6 @@
         value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), |
         placeholder: "メールアドレス"                                                                   |
     .button-panel
-      = f.submit "#{t '.title'}",class: "button"
+      = f.submit "#{t '.title'}",class: "btn btn-default  btn-block"
   .form-footer
     = render "devise/shared/links"
