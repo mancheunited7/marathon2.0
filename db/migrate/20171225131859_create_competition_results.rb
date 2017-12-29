@@ -3,7 +3,9 @@ class CreateCompetitionResults < ActiveRecord::Migration[5.1]
     create_table :competition_results do |t|
       t.integer :user_id, null: false
       t.date :day, null: false
-      t.integer :prefecture_code, null: false
+      t.string :competition_place, null: false, default: ""
+      t.float :latitude, null: false
+      t.float :longitude, null: false
       t.integer :distance, null: false
       t.string :competition_name, null: false
       t.integer :hour, null:false

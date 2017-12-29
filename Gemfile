@@ -48,6 +48,8 @@ gem 'nokogiri'
 gem 'selenium-webdriver'
 gem 'ransack'
 
+gem 'gmaps4rails'
+gem 'geocoder'
 gem 'jp_prefecture'
 
 gem 'kaminari'

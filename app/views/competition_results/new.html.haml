@@ -15,7 +15,7 @@
     = f.text_field :competition_name, class: "form-control input-lg"
   .field
     %h4= f.label :"#{t '.place'}"
-    = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, {}, class: "form-control input-lg bootstrap-dhw"
+    = f.text_field :competition_place, placeholder: "#{t '.competition_place'}", class: "form-control input-lg"
   .field
     %h4= f.label :"#{t '.run_distance'}"
     = f.text_field :distance, placeholder: "km", class: "form-control input-lg bootstrap-dhw"
