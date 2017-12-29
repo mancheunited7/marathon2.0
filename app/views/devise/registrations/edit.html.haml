@@ -12,18 +12,10 @@
           Currently waiting confirmation for: #{resource.unconfirmed_email}
       .form-item
         - if @minimum_password_length
-          %em
-          (#{@minimum_password_length}文字以上:
-          %i #{t ".leave_blank_if_you_don't_want_to_change_it"})
-        = f.password_field :password, autocomplete: "off",placeholder: "新たなパスワードを入力"
+          = f.password_field :password, autocomplete: "off",placeholder: "新たなパスワードを入力(#{@minimum_password_length}文字以上:#{t ".leave_blank_if_you_don't_want_to_change_it"})"
       .form-item
         = f.password_field :password_confirmation, autocomplete: "off",placeholder: "確認用パスワード"
       .form-item
-        %i (#{t '.we_need_your_current_password_to_confirm_your_changes'})
-        = f.password_field :current_password, autocomplete: "off",placeholder:"変更には現在のパスワードを入力"
-    .field
-      = profile_img(@user) if profile_img(@user)
-      = f.file_field :avatar
-      = f.hidden_field :avatar_cache
+        = f.password_field :current_password, autocomplete: "off",placeholder:"#{t '.we_need_your_current_password_to_confirm_your_changes'}"
     .button-panel
-      = f.submit "#{t '.title'}",class: "button"
+      = f.submit "#{t '.title'}",class: "btn btn-default btn-block fl_gh"
