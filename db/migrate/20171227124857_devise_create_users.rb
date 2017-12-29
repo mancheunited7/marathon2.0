@@ -20,7 +20,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.inet     :last_sign_in_ip
 
 
-      t.string   :uid,                    default: "", null: false
+      t.string   :userid,                 default: "", null: false
       t.string   :provider,               default: "", null: false
       t.string   :image_url
       t.string   :name
@@ -40,7 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.timestamps null: false
     end
     add_index :users, :reset_password_token, unique: true
-    add_index :users, [:email, :uid, :provider], unique: true
+    add_index :users, [:email, :userid, :provider], unique: true
 
 
     create_table :sessions do |t|
