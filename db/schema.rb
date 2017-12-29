@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20171227124857) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
-    t.string "uid", default: "", null: false
+    t.string "userid", default: "", null: false
     t.string "provider", default: "", null: false
     t.string "image_url"
     t.string "name"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20171227124857) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email", "uid", "provider"], name: "index_users_on_email_and_uid_and_provider", unique: true
+    t.index ["email", "userid", "provider"], name: "index_users_on_email_and_userid_and_provider", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
