@@ -259,13 +259,18 @@ ja:
       run_experience: ラン経験値
       get_item_list: 獲得アイテム一覧
       run_friends_list: ラン友一覧
+      best_time_list: ベストタイム一覧
+      best_time_5: 5キロ
+      best_time_10: 10キロ
+      best_time_21: ハーフ
+      best_time_42: フル
+      best_time_100: 100キロ
       practice_list: 練習の記録一覧
       day: 練習日
       distance: 走った距離
       time: タイム
       heart_rate: 心拍数
       competition_result_list: 大会記録一覧
-      best_time_list: ベストタイム一覧
       competition_day: 開催日
       competition_name: 大会名
       competition_place: 開催場所

@@ -9,10 +9,10 @@ class CreateCompetitionResults < ActiveRecord::Migration[5.1]
       t.float :longitude, null: false
       t.integer :distance, null: false
       t.string :competition_name, null: false
-      t.integer :hour, null:false
-      t.integer :minute, null:false
-      t.integer :second, null:false
-      t.integer :calctime
+      t.integer :hour
+      t.integer :minute
+      t.integer :second
+      t.integer :calc_time, null: false
       t.integer :heart_rate
       t.text :content, null:false, default: ""
       t.string :avatar

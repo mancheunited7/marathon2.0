@@ -4,6 +4,19 @@
 %h3= t '.get_item_list'
 %h3= t '.run_friends_list'
 %h3= t '.best_time_list'
+%table.common-table
+  %tr
+    %th= t '.best_time_5'
+    %th= t '.best_time_10'
+    %th= t '.best_time_21'
+    %th= t '.best_time_42'
+    %th= t '.best_time_100'
+  %tr
+    %td= time(@best_time_5.first)
+    %td= time(@best_time_10.first)
+    %td= time(@best_time_21.first)
+    %td= time(@best_time_42.first)
+    %td= time(@best_time_100.first)
 %h3= t '.practice_list'
 %table.common-table
   %tr
@@ -14,9 +27,9 @@
   - @practices.each do |practice|
     %tr
       %td= practice.day
-      %td= practice.distance
-      %td= practice.minute
-      %td= practice.content
+      %td= distance(practice)
+      %td= time(practice)
+      %td= practice.heart_rate
 %h3= t '.competition_result_list'
 %table.common-table
   %tr
@@ -31,9 +44,9 @@
       %td= result.day
       %td= result.competition_name
       %td= result.competition_place
-      %td= result.distance
-      %td= result.minute
-      %td= result.competition_point
+      %td= distance(result)
+      %td= time(result)
+      %td= competition_point(result)
 %h3= t '.competition_map'
 - unless @competition_results.empty?
   #map
