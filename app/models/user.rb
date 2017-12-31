@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :validatable, :confirmable, :omniauthable
 
   has_many :practices
-  has_many :competitionresults
+  has_many :competition_results
 
   def self.find_for_facebook(auth,signed_in_resource=nil)
     user = User.find_by(email: auth.info.email, provider: auth.provider, userid: auth.uid)

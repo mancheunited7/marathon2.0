@@ -1,4 +1,5 @@
 class PracticesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_practice, only: [:show, :edit, :update, :destroy]
 
   # GET /practices
