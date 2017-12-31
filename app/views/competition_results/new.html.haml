@@ -18,7 +18,7 @@
     = f.text_field :address, placeholder: "#{t '.competition_address'}", class: "form-control input-lg"
   .field
     %h4= f.label :"#{t '.run_distance'}"
-    = f.text_field :distance, placeholder: "km", class: "form-control input-lg bootstrap-dhw"
+    = f.number_field :distance, placeholder: "km", class: "form-control input-lg bootstrap-dhw",min:0
   .field
     %h4= f.label :"#{t '.run_time'}"
     = f.number_field :hour, class: "form-control input-lg bootstrap-dt", placeholder: "時間", min:0

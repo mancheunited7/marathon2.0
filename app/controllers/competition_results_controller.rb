@@ -23,7 +23,10 @@ class CompetitionResultsController < ApplicationController
 
   def create
     @competition_result = CompetitionResult.new(competition_result_params)
+    #開催場所表示用にaddressの値を退避
     @competition_result.competition_place = @competition_result.address
+    #ベストタイム表示用に記録を秒に変換
+    @competition_result.calc_time = CompetitionResult.calc_time(@competition_result)
     @competition_result.user_id = current_user.id
     if @competition_result.save
       redirect_to mypages_path, notice: '大会結果を登録しました!!'
