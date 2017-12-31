@@ -1,4 +1,5 @@
 class CompetitionResultsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_competition_result, only: [:show, :edit, :update, :destroy]
 
   # GET /competition_results
@@ -22,9 +23,10 @@ class CompetitionResultsController < ApplicationController
 
   def create
     @competition_result = CompetitionResult.new(competition_result_params)
-    #@competition_result.user_id = current_user.id
+    @competition_result.competition_place = @competition_result.address
+    @competition_result.user_id = current_user.id
     if @competition_result.save
-      redirect_to competition_results_path, notice: '大会結果を登録しました!!'
+      redirect_to mypages_path, notice: '大会結果を登録しました!!'
     else
       render 'new'
     end
@@ -55,13 +57,11 @@ class CompetitionResultsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_competition_result
-      @competition_result = CompetitionResult.find(params[:id])
-    end
+  def set_competition_result
+    @competition_result = CompetitionResult.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def competition_result_params
-      params.require(:competition_result).permit(:user_id, :day, :prefecture_code, :distance, :competition_name, :hour, :minute, :second, :calctime, :heart_rate, :content, :avatar, :avatar_cache, :competition_point, :competition_memmo )
-    end
+  def competition_result_params
+    params.require(:competition_result).permit(:user_id, :day, :address, :competition_place, :latitude, :longitude, :distance, :competition_name, :hour, :minute, :second, :calctime, :heart_rate, :content, :avatar, :avatar_cache, :competition_point, :competition_memmo )
+  end
 end

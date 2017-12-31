@@ -1,31 +1,47 @@
-%h2= #{current_user.name}さんのページ
-%h3 練習の記録一覧
-%table
+%h2= current_user.name + 'さんのページ'
+%h3= t '.run_level'
+%h3= t '.run_experience'
+%h3= t '.get_item_list'
+%h3= t '.run_friends_list'
+%h3= t '.best_time_list'
+%h3= t '.practice_list'
+%table.common-table
   %tr
-    %th 練習日
-    %th 走った距離
-    %th タイム
-    %th 練習内容
-  = @practices.each do |practice|
+    %th= t '.day'
+    %th= t '.distance'
+    %th= t '.time'
+    %th= t '.heart_rate'
+  - @practices.each do |practice|
     %tr
-      %th practice.day
-      %th practice.distance
-      %th
-      %th practice.content
-%h3 大会記録一覧
-%table
+      %td= practice.day
+      %td= practice.distance
+      %td= practice.minute
+      %td= practice.content
+%h3= t '.competition_result_list'
+%table.common-table
   %tr
-    %th 開催日
-    %th 開催場所
-    %th 走った距離
-    %th タイム
-    %th 思い出
-    %th 大会評価
-  = @competition_results.each do |result|
+    %th= t '.competition_day'
+    %th= t '.competition_name'
+    %th= t '.competition_place'
+    %th= t '.distance'
+    %th= t '.time'
+    %th= t '.competition_point'
+  - @competition_results.each do |result|
     %tr
-      %th result.day
-      %th result.place
-      %th result.distance
-      %th
-      %th result.content
-      %th result.competition_point
+      %td= result.day
+      %td= result.competition_name
+      %td= result.competition_place
+      %td= result.distance
+      %td= result.minute
+      %td= result.competition_point
+%h3= t '.competition_map'
+- unless @competition_results.empty?
+  #map
+  :javascript
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(#{raw @map.to_json});
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(5);
+    });

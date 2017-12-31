@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20171227124857) do
   create_table "competition_results", force: :cascade do |t|
     t.integer "user_id", null: false
     t.date "day", null: false
+    t.string "address", default: "", null: false
     t.string "competition_place", default: "", null: false
     t.float "latitude", null: false
     t.float "longitude", null: false
