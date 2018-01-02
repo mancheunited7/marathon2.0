@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_many :competition_results
   has_many :follow_run_friends, class_name: "run_friend", foreign_key: "follow_id", dependent: :destroy
   has_many :followed_run_friends, class_name: "run_friend", foreign_key: "followed_id", dependent: :destroy
-  has_many :follow_users, through: :follow_run_frineds, source: :follow
-  has_many :followed_users, through: :followed_run_friends, source: :followed
+  has_many :follow_users, through: :follow_run_frineds, source: :followed
+  has_many :followed_users, through: :followed_run_friends, source: :follow
 
   def self.find_for_facebook(auth,signed_in_resource=nil)
     user = User.find_by(email: auth.info.email, provider: auth.provider, userid: auth.uid)
@@ -83,5 +83,20 @@ class User < ApplicationRecord
 
   def self.create_unique_string
     SecureRandom.uuid
+  end
+
+  #フォローしているかどうか確認
+  def follow?(follow_id)
+    RunFriend.find(follow_id: follow_id)
+  end
+
+  #フォロー登録
+  def follow(user)
+    Runfriend.create(followed_id: user.id)
+  end
+
+  #フォロー解除
+  def unfollow(follow_id)
+    RunFriend.find(followed_id: follow_id).destroy
   end
 end

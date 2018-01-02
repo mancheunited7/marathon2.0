@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-
   resources :run_friends
   root 'top#index'
-
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
@@ -10,6 +8,8 @@ Rails.application.routes.draw do
   resources :mypages, only:[:index]
   resources :practices, except:[:index]
   resources :competition_results, except:[:index]
+  resources :users, only:[:index]
+  resources :run_friends, only:[:create, :destroy]
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

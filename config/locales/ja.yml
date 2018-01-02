@@ -276,3 +276,6 @@ ja:
       competition_place: 開催場所
       competition_point: 大会の評価
       competition_map: ここ走ったよ〜
+  users:
+    index:
+      title: ユーザー一覧
