@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227124857) do
+ActiveRecord::Schema.define(version: 20171231163548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 20171227124857) do
     t.string "avatar_cache"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "run_friends", force: :cascade do |t|
+    t.integer "follow_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follow_id", "followed_id"], name: "index_run_friends_on_follow_id_and_followed_id", unique: true
+    t.index ["follow_id"], name: "index_run_friends_on_follow_id"
+    t.index ["followed_id"], name: "index_run_friends_on_followed_id"
   end
 
   create_table "sessions", force: :cascade do |t|

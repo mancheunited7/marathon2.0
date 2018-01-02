@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   has_many :practices
   has_many :competition_results
+  has_many :follow_run_friends, class_name: "run_friend", foreign_key: "follow_id", dependent: :destroy
+  has_many :followed_run_friends, class_name: "run_friend", foreign_key: "followed_id", dependent: :destroy
+  has_many :follow_users, through: :follow_run_frineds, source: :follow
+  has_many :followed_users, through: :followed_run_friends, source: :followed
 
   def self.find_for_facebook(auth,signed_in_resource=nil)
     user = User.find_by(email: auth.info.email, provider: auth.provider, userid: auth.uid)
