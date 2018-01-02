@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :run_friends
   root 'top#index'
 
   devise_for :users, controllers: {
