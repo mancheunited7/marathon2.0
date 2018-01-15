@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   has_many :practices
   has_many :competition_results
-  has_many :follow_run_friends, class_name: "run_friend", foreign_key: "follow_id", dependent: :destroy
-  has_many :followed_run_friends, class_name: "run_friend", foreign_key: "followed_id", dependent: :destroy
+  has_many :follow_run_friends, class_name: "RunFriend", foreign_key: "follow_id", dependent: :destroy
+  has_many :followed_run_friends, class_name: "RunFriend", foreign_key: "followed_id", dependent: :destroy
   has_many :follow_users, through: :follow_run_frineds, source: :followed
   has_many :followed_users, through: :followed_run_friends, source: :follow
 
@@ -86,17 +86,18 @@ class User < ApplicationRecord
   end
 
   #フォローしているかどうか確認
-  def follow?(follow_id)
-    RunFriend.find(follow_id: follow_id)
+  def follow?(user)
+    RunFriend.find_by(followed_id: user.id)
   end
 
   #フォロー登録
   def follow(user)
+    raise
     Runfriend.create(followed_id: user.id)
   end
 
   #フォロー解除
-  def unfollow(follow_id)
-    RunFriend.find(followed_id: follow_id).destroy
+  def unfollow(user)
+    RunFriend.find_by(followed_id: user.id).destroy
   end
 end
