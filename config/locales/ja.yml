@@ -279,3 +279,14 @@ ja:
   users:
     index:
       title: ユーザー一覧
+  competition_infos:
+    new:
+      title: 大会情報取得
+      road: ロードの大会
+      trail: トレイルの大会
+    index:
+      title: 大会一覧
+      day: 開催日
+      name: 大会名
+      place: 開催地
+      site: 大会サイト

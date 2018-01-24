@@ -1,0 +1,9 @@
+%h2= t '.title'
+= form_for(@CompetitionInfo) do |f|
+  = f.check_box :road
+  %i #{t '.road'}
+  %br/
+  = f.check_box :trail
+  %i #{t '.trail'}
+  %br/
+  = f.submit "#{t '.title'}"

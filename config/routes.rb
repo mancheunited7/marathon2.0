@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :run_friends
   root 'top#index'
   devise_for :users, controllers: {
     registrations: "users/registrations",
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
   resources :competition_results, except:[:index]
   resources :users, only:[:index]
   resources :run_friends, only:[:create, :destroy]
+  resources :competition_infos, only:[:new, :index, :create]
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

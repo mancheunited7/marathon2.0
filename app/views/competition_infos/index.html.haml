@@ -1,0 +1,17 @@
+%h2= t '.title'
+
+%table
+  %thead
+    %tr
+      %th= t '.day'
+      %th= t '.name'
+      %th= t '.place'
+      %th= t '.site'
+
+  %tbody
+    - @CompetitionInfos.each do |competition_info|
+      %tr
+        %td= competition_info.day
+        %td= competition_info.name
+        %td= competition_info.place
+        %td= competition_info.site
