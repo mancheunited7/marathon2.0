@@ -7,6 +7,9 @@ class MypagesController < ApplicationController
     @best_time_21 = CompetitionResult.where(distance: 21).order(:calc_time).limit(1)
     @best_time_42 = CompetitionResult.where(distance: 42).order(:calc_time).limit(1)
     @best_time_100 = CompetitionResult.where(distance: 100).order(:calc_time).limit(1)
+    @graph_data = current_user.practices.order(:day).limit(10)
+    @distance_data = @graph_data.pluck(:day, :distance)
+    @weight_data = @graph_data.pluck(:day, :weight)
     @practices = current_user.practices.order(:day).limit(3).decorate
     #GoogleMap表示用に大会結果を全て取得
     @competition_results_all = current_user.competition_results
