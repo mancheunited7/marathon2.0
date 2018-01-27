@@ -4,6 +4,9 @@
 %h3= t '.get_item_list'
 %h3= t '.run_friends_list'
 %h3= t '.best_time_list'
+%h3= t '.graph'
+= column_chart @distance_data, width:"300px"
+= line_chart @weight_data, width:"300px"
 %table.common-table
   %tr
     %th= t '.best_time_5'
