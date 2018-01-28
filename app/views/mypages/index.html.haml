@@ -4,9 +4,6 @@
 %h3= t '.get_item_list'
 %h3= t '.run_friends_list'
 %h3= t '.best_time_list'
-%h3= t '.graph'
-= column_chart @distance_data, width:"300px"
-= line_chart @weight_data, width:"300px"
 %table.common-table
   %tr
     %th= t '.best_time_5'
@@ -15,11 +12,14 @@
     %th= t '.best_time_42'
     %th= t '.best_time_100'
   %tr
-    %td= time(@best_time_5.first)
-    %td= time(@best_time_10.first)
-    %td= time(@best_time_21.first)
-    %td= time(@best_time_42.first)
-    %td= time(@best_time_100.first)
+    %td= time(@best_time_5)
+    %td= time(@best_time_10)
+    %td= time(@best_time_21)
+    %td= time(@best_time_42)
+    %td= time(@best_time_100)
+%h3= t '.graph'
+= column_chart @distance_data, width:"300px"
+= line_chart @weight_data, width:"300px"
 %h3= t '.practice_list'
 %table.common-table
   %tr
