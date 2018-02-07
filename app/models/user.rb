@@ -92,7 +92,6 @@ class User < ApplicationRecord
 
   #フォロー登録
   def follow(user)
-    raise
     Runfriend.create(followed_id: user.id)
   end
 
