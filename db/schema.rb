@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180115123132) do
+ActiveRecord::Schema.define(version: 20180207081435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,12 @@ ActiveRecord::Schema.define(version: 20180115123132) do
     t.string "avatar_cache"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "weather"
+    t.integer "temperature"
+    t.integer "humidity"
+    t.integer "wind_speed"
+    t.integer "lap"
+    t.integer "body_fat"
   end
 
   create_table "run_friends", force: :cascade do |t|

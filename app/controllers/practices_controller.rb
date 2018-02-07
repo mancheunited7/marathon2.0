@@ -23,6 +23,7 @@ class PracticesController < ApplicationController
   def create
     @practice = Practice.new(practice_params)
     @practice.user_id = current_user.id
+    @practice.lap = calc_time(@practice)
     if @practice.save
       redirect_to mypages_path, notice: '練習記録を登録しました!!'
     else
@@ -62,6 +63,6 @@ class PracticesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def practice_params
-      params.require(:practice).permit(:day, :distance, :hour, :minute, :second, :content, :weight, :heart_rate, :avatar, :avatar_cache)
+      params.require(:practice).permit(:day, :weather, :temperature, :humidity, :wind_speed, :distance, :hour, :minute, :second, :content, :weight, :body_fat, :heart_rate, :avatar, :avatar_cache)
     end
 end

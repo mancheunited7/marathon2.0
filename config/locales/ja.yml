@@ -232,11 +232,17 @@ ja:
   practices:
     new:
       title: 練習の記録を保存しよう
-      competition_day: 練習日を設定しよう
+      practice_day: 練習日を設定しよう
+      weather_conditions: 気象条件を入力しよう
+      weather: 天気
+      temperature: 気温
+      humidity: 湿度
+      wind_speed: 風速
       run_distance: 走った距離を記録しよう
       run_time: 走った時間を記録しよう
       heart_rate: 心拍数を記録しよう
       after_weight: 体重を記録しよう
+      after_body_fat: 体脂肪率を入力しよう
       paractice_content: 練習内容を記録しよう
       practice_photo: 練習の写真を投稿しよう
   competition_results:
