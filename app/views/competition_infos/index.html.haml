@@ -1,17 +1,25 @@
-%h2= t '.title'
+#competition-infos-index
+  %h2= t '.title'
+  .search-form-static
+  %el-form{":model": "query", "label-width": "120px", ref: "form"}
+    %el-form-item{ label: "#{t '.day'}" }
+      %el-col{ ":span": "11"}
+        %el-date-picker{ "v-model": "query.day_gteq", type: "date" }
+      %el-col.line{ ":span": "2"}
+      %el-col{ ":span": "11"}
+        %el-date-picker{ "v-model": "query.day_lteq", type: "date" }
+    %el-form-item{ label: "#{t '.name'}" }
+      %el-input{ "v-model": "query.name_cont" }
+    %el-form-item{ label: "#{t '.place'}" }
+      %el-col{ ":span": "11"}
+        %el-input{ "v-model": "query.name_cont" }
+    %el-form-item
+      %el-button{ type: "primary"}>
+      @click="search">search
+  \-item>
+  %el-table{ ":data" => "competitioninfos", :height => "400", :stripe => "", style: "width: 100%"}
+    %el-table-column{ label: "#{t '.day'}", prop: "day", sortable: "", width: "180"}
+    %el-table-column{ label: "#{t '.name'}", prop: "name", sortable: "", width: "180"}
+    %el-table-column{ label: "#{t '.place'}", prop: "place", sortable: ""}
 
-%table
-  %thead
-    %tr
-      %th= t '.day'
-      %th= t '.name'
-      %th= t '.place'
-      %th= t '.site'
-
-  %tbody
-    - @CompetitionInfos.each do |competition_info|
-      %tr
-        %td= competition_info.day
-        %td= competition_info.name
-        %td= competition_info.place
-        %td= competition_info.site
+= javascript_pack_tag 'competition_infos_vue'

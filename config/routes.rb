@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+  namespace :api, {format: 'json'} do
+    resources :competition_infos do
+      get :search
+    end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

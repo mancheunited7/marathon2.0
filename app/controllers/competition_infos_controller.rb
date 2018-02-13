@@ -10,7 +10,14 @@ class CompetitionInfosController < ApplicationController
   end
 
   def index
-    @CompetitionInfos = CompetitionInfo.all
+    @search = CompetitionInfo.search(params[:q])
+    binding.pry
+    #@CompetitionInfos = CompetitionInfo.page(params[:page])
+  end
+
+  def search
+    @q = CompetitionInfo.ransack(search_params)
+    @CompetitionInfos = @q.result(distinct:true)
   end
 
   def create
@@ -97,5 +104,9 @@ class CompetitionInfosController < ApplicationController
   private
   def competitioninfo_params
     params.require(:competition_info).permit(:road, :trail)
+  end
+
+  def search_params
+    params.require(:q).permit(:day_gte, :day_lteq, :name_cont_any, :place_cont_any, :prefecture_code)
   end
 end

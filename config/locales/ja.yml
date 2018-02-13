@@ -294,6 +294,9 @@ ja:
     index:
       title: 大会一覧
       day: 開催日
+      select_day: 開催日を選択してください
       name: 大会名
+      input_name: 大会名を入力してください
+      input_place: 開催地を入力してください
       place: 開催地
       site: 大会サイト
