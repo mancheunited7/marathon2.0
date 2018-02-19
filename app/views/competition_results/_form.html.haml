@@ -1,20 +1,36 @@
-= simple_form_for(@competition_result) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :user_id
-    = f.input :day
-    = f.input :prefecture_code
-    = f.input :distance
-    = f.input :competition_name
-    = f.input :hour
-    = f.input :minute
-    = f.input :second
-    = f.input :calctime
-    = f.input :content
-    = f.input :avatar
-    = f.input :avatar_cache
-    = f.input :point
-
-  .form-actions
-    = f.button :submit
+.field
+  %h4= f.label :"#{t '.weather_conditions'}"
+  .inline_block_weather
+    %h5= f.label :"#{t '.weather'}"
+    = f.text_field :weather, class: "form-control input-lg form_size_weather"
+  .inline_block_weather
+    %h5= f.label :"#{t '.temperature'}"
+    = f.text_field :temperature, placeholder: "℃", class: "form-control input-lg form_size_weather"
+.field
+  .inline_block_weather
+    %h5= f.label :"#{t '.humidity'}"
+    = f.text_field :humidity, placeholder: "%", class: "form-control input-lg form_size_weather"
+  .inline_block_weather
+    %h5= f.label :"#{t '.wind_speed'}"
+    = f.text_field :wind_speed, placeholder: "km/h", class: "form-control input-lg form_size_weather"
+.field
+  %h4= f.label :"#{t '.run_distance'}"
+  = f.number_field :distance, placeholder: "km", class: "form-control input-lg form_size",min:0
+.field
+  %h4= f.label :"#{t '.run_time'}"
+  = f.number_field :hour, class: "form-control input-lg date_time", min:0
+  時間
+  \#{f.number_field :minute, class: "form-control input-lg date_time", min: 0 ,max: 60}分
+  \#{f.number_field :second, class: "form-control input-lg date_time", min: 0 ,max: 60}秒
+.inline_block_body
+  .field
+    %h4= f.label :"#{t '.heart_rate'}"
+    = f.number_field :heart_rate, class: "form-control input-lg form_size_body"
+.inline_block_body
+  .field
+    %h4= f.label :"#{t '.after_weight'}"
+    = f.number_field :weight, placeholder: "kg", class: "form-control input-lg form_size_body"
+.inline_block_body
+  .field
+    %h4= f.label :"#{t '.after_body_fat'}"
+    = f.number_field :body_fat, placeholder: "%", class: "form-control input-lg form_size_body"

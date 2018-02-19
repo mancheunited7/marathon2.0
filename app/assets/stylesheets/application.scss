@@ -106,3 +106,49 @@ header{
   margin-top: 20px;
   color:#fff;
 }
+
+.inline-block{
+  display:inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+}
+
+.date_time {
+  display: inline-block;
+  width: 15%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.form_size{
+  width: 49%;
+}
+
+.inline_block_weather{
+  display:inline-block;
+  vertical-align: top;
+  margin-right: 120px;
+}
+
+.form_size_weather{
+  width: 140%;
+}
+
+.inline_block_body{
+  display:inline-block;
+  vertical-align: top;
+}
+
+.form_size_body{
+  width: 90%;
+}
+
+.btn_submit{
+  background: #2672EC;
+  color: #fff;
+  width: 300px;
+}
+
+.field_color{
+  color:#0000ff;
+}
