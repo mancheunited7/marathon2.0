@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180219122533) do
+ActiveRecord::Schema.define(version: 20180220114239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20180219122533) do
     t.string "competition_place", default: "", null: false
     t.float "latitude", null: false
     t.float "longitude", null: false
-    t.integer "distance", null: false
+    t.decimal "distance", null: false
     t.string "competition_name", null: false
     t.integer "hour"
     t.integer "minute"
@@ -48,12 +48,12 @@ ActiveRecord::Schema.define(version: 20180219122533) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "weather"
-    t.integer "temperature"
-    t.integer "humidity"
-    t.integer "wind_speed"
-    t.integer "lap"
-    t.integer "body_fat"
-    t.integer "weight"
+    t.decimal "temperature"
+    t.decimal "humidity"
+    t.decimal "wind_speed"
+    t.decimal "lap"
+    t.decimal "body_fat"
+    t.decimal "weight"
   end
 
   create_table "practices", force: :cascade do |t|

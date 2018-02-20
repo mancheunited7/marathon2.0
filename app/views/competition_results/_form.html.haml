@@ -15,7 +15,8 @@
     = f.text_field :wind_speed, placeholder: "m/s", class: "form-control input-lg form_size_weather"
 .field
   %h4= f.label :"#{t '.run_distance'}"
-  = f.number_field :distance, placeholder: "km", class: "form-control input-lg form_size",min:0
+  %h5= "#{t ".distance_caution"}"
+  = f.number_field :distance, placeholder: "km", step: "0.0001", class: "form-control input-lg form_size",min:0
 .field
   %h4= f.label :"#{t '.run_time'}"
   = f.number_field :hour, class: "form-control input-lg date_time", min:0

@@ -263,6 +263,7 @@ ja:
       humidity: 湿度
       wind_speed: 風速
       run_distance: 走った距離を入力しよう
+      distance_caution: （ハーフは21.0975km、フルは42.195kmで入力してください）
       run_time: タイムを入力しよう
       heart_rate: 心拍数を入力しよう
       after_weight: 体重を入力しよう
