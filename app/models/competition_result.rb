@@ -1,6 +1,8 @@
 class CompetitionResult < ApplicationRecord
   belongs_to :user
 
+  mount_uploader :avatar, AvatarUploader
+
   #住所から軽度、緯度を取得
   geocoded_by :address
   after_validation :geocode, if: Proc.new { |a| a.address_changed? }

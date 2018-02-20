@@ -22,7 +22,7 @@
     = f.text_area :content, rows: "5", class: "form-control input-lg form_size"
   .field
     %h4= f.label :"#{t '.competition_photo'}"
-    = f.file_field :avatar
+    = f.file_field :avatar, multiple: true
     = f.hidden_field :avatar_cache
   .field
     %h4= f.label :"#{t '.competition_point'}"
