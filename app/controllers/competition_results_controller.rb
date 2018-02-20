@@ -64,6 +64,6 @@ class CompetitionResultsController < ApplicationController
   end
 
   def competition_result_params
-    params.require(:competition_result).permit(:user_id, :day, :address, :competition_place, :latitude, :longitude, :distance, :competition_name, :hour, :minute, :second, :calctime, :heart_rate, :content, :avatar, :avatar_cache, :competition_point, :competition_memmo )
+    params.require(:competition_result).permit(:user_id, :day, :competition_name, :address, :competition_place, :latitude, :longitude, :weather, :temperature, :humidity, :wind_speed, :distance, :hour, :minute, :second, :calctime, :heart_rate, :weight, :body_fat, :content, :avatar, :avatar_cache, :competition_point, :competition_memo)
   end
 end

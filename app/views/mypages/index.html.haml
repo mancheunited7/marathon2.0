@@ -54,6 +54,7 @@
       %td= distance(result)
       %td= time(result)
       %td= competition_point(result)
+      /%td= image_tag(result.avatar, size: "50x50")
 %h3= t '.competition_map'
 - unless @competition_results.empty?
   #map

@@ -71,7 +71,6 @@ gem 'simple_form'
 gem 'draper'
 
 gem "carrierwave"
-gem 'cloudinary'
 
 gem 'chartkick'
 

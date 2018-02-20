@@ -247,18 +247,27 @@ ja:
       practice_photo: 練習の写真を投稿しよう
   competition_results:
     new:
-      title: 大会結果を保存しよう
-      competition_day: 大会日を設定しよう
-      competition_name: 大会名を設定しよう
-      address: 開催地を設定しよう
-      run_distance: 走った距離を記録しよう
-      run_time: 記録を保存しよう
-      heart_rate: 心拍数を記録しよう
+      title: 大会結果を記録しよう
+      competition_day: 大会の開催日を入力しよう
+      competition_name: 大会名を入力しよう
+      address: 開催地を入力しよう
       competition_content: 大会を振り返ろう
       competition_photo: 大会の思い出を投稿しよう
       competition_point: 大会を評価しよう
       competition_memo: 大会について一言
       competition_address: 【都道府県市区町村 or スタート地点】 を入力してください
+    form:
+      weather_conditions: 気象条件を入力しよう
+      weather: 天気
+      temperature: 気温
+      humidity: 湿度
+      wind_speed: 風速
+      run_distance: 走った距離を入力しよう
+      distance_caution: （ハーフは21.0975km、フルは42.195kmで入力してください）
+      run_time: タイムを入力しよう
+      heart_rate: 心拍数を入力しよう
+      after_weight: 体重を入力しよう
+      after_body_fat: 体脂肪率を入力しよう
   mypages:
     index:
       run_level: ランレベル
