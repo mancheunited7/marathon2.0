@@ -15,7 +15,7 @@ class MypagesController < ApplicationController
     @competition_results_all = current_user.competition_results
     #GoogleMap表示用データ取得
     @map = CompetitionResult.set_map(@competition_results_all)
-    @competition_results = @competition_results_all.order(:day).limit(5)
+    @competition_results = @competition_results_all.order(day: "DESC").limit(5)
     @users = User.all
   end
 end
