@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220114239) do
+ActiveRecord::Schema.define(version: 20180221123854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20180220114239) do
     t.integer "calc_time", null: false
     t.integer "heart_rate"
     t.text "content", default: "", null: false
-    t.string "avatar"
-    t.string "avatar_cache"
+    t.string "competition_result_photo"
+    t.string "competition_result_photo_cache"
     t.integer "competition_point", null: false
     t.text "competition_memo", default: "", null: false
     t.datetime "created_at", null: false
@@ -59,23 +59,23 @@ ActiveRecord::Schema.define(version: 20180220114239) do
   create_table "practices", force: :cascade do |t|
     t.integer "user_id", null: false
     t.date "day", null: false
-    t.integer "distance", null: false
+    t.decimal "distance", null: false
     t.integer "hour", null: false
     t.integer "minute", null: false
     t.integer "second", null: false
     t.text "content", null: false
-    t.integer "weight"
+    t.decimal "weight"
     t.integer "heart_rate"
-    t.string "avatar"
-    t.string "avatar_cache"
+    t.string "practice_photo"
+    t.string "practice_photo_cache"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "weather"
-    t.integer "temperature"
-    t.integer "humidity"
-    t.integer "wind_speed"
-    t.integer "lap"
-    t.integer "body_fat"
+    t.decimal "temperature"
+    t.decimal "humidity"
+    t.decimal "wind_speed"
+    t.decimal "lap"
+    t.decimal "body_fat"
   end
 
   create_table "run_friends", force: :cascade do |t|

@@ -37,6 +37,7 @@
       %td= distance(practice)
       %td= time(practice)
       %td= practice.heart_rate
+      /%td= image_tag(practice.practice_photo, size: "50x50")
 %h3= t '.competition_result_list'
 %table.common-table
   %tr
@@ -54,7 +55,7 @@
       %td= distance(result)
       %td= time(result)
       %td= competition_point(result)
-      /%td= image_tag(result.avatar, size: "50x50")
+      /%td= image_tag(result.competition_result_photo, size: "50x50")
 %h3= t '.competition_map'
 - unless @competition_results.empty?
   #map
