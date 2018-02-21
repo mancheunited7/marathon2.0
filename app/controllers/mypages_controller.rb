@@ -10,7 +10,7 @@ class MypagesController < ApplicationController
     @graph_data = current_user.practices.order(:day).limit(10)
     @distance_data = @graph_data.pluck(:day, :distance)
     @weight_data = @graph_data.pluck(:day, :weight)
-    @practices = current_user.practices.order(:day).limit(3).decorate
+    @practices = current_user.practices.order(day: "DESC").limit(3).decorate
     #GoogleMap表示用に大会結果を全て取得
     @competition_results_all = current_user.competition_results
     #GoogleMap表示用データ取得

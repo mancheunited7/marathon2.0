@@ -56,13 +56,11 @@ class PracticesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_practice
       @practice = Practice.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def practice_params
-      params.require(:practice).permit(:day, :weather, :temperature, :humidity, :wind_speed, :distance, :hour, :minute, :second, :content, :weight, :body_fat, :heart_rate, :avatar, :avatar_cache)
+      params.require(:practice).permit(:day, :weather, :temperature, :humidity, :wind_speed, :distance, :hour, :minute, :second, :content, :weight, :body_fat, :heart_rate, :practice_photo, :practice_photo_cache)
     end
 end

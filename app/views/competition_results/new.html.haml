@@ -22,8 +22,8 @@
     = f.text_area :content, rows: "5", class: "form-control input-lg form_size"
   .field
     %h4= f.label :"#{t '.competition_photo'}"
-    = f.file_field :avatar, multiple: true
-    = f.hidden_field :avatar_cache
+    = f.file_field :competition_result_photo
+    = f.hidden_field :competition_result_photo_cache
   .field
     %h4= f.label :"#{t '.competition_point'}"
     = f.number_field :competition_point, class: "form-control input-lg form_size", placeholder: "点数", min: 0, max: 100

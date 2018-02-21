@@ -5,17 +5,18 @@
     = f.text_field :weather, class: "form-control input-lg form_size_weather"
   .inline_block_weather
     %h5= f.label :"#{t '.temperature'}"
-    = f.text_field :temperature, placeholder: "℃", class: "form-control input-lg form_size_weather"
+    = f.text_field :temperature, placeholder: "℃", step: "0.1", class: "form-control input-lg form_size_weather"
 .field
   .inline_block_weather
     %h5= f.label :"#{t '.humidity'}"
-    = f.text_field :humidity, placeholder: "%", class: "form-control input-lg form_size_weather"
+    = f.text_field :humidity, placeholder: "%", step: "0.1", class: "form-control input-lg form_size_weather"
   .inline_block_weather
     %h5= f.label :"#{t '.wind_speed'}"
-    = f.text_field :wind_speed, placeholder: "m/s", class: "form-control input-lg form_size_weather"
+    = f.text_field :wind_speed, placeholder: "m/s", step: "0.1", class: "form-control input-lg form_size_weather"
 .field
   %h4= f.label :"#{t '.run_distance'}"
-  %h5= "#{t ".distance_caution"}"
+  - if controller.controller_name == "competition_results"
+    %h5= "#{t ".distance_caution"}"
   = f.number_field :distance, placeholder: "km", step: "0.0001", class: "form-control input-lg form_size",min:0
 .field
   %h4= f.label :"#{t '.run_time'}"
@@ -30,8 +31,8 @@
 .inline_block_body
   .field
     %h4= f.label :"#{t '.after_weight'}"
-    = f.number_field :weight, placeholder: "kg", class: "form-control input-lg form_size_body"
+    = f.number_field :weight, placeholder: "kg", step: "0.1", class: "form-control input-lg form_size_body"
 .inline_block_body
   .field
     %h4= f.label :"#{t '.after_body_fat'}"
-    = f.number_field :body_fat, placeholder: "%", class: "form-control input-lg form_size_body"
+    = f.number_field :body_fat, placeholder: "%", step: "0.1", class: "form-control input-lg form_size_body"

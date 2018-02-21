@@ -1,7 +1,7 @@
 class CompetitionResult < ApplicationRecord
   belongs_to :user
 
-  mount_uploader :avatar, AvatarUploader
+  mount_uploader :competition_result_photo, CompetitionResultPhotoUploader
 
   #住所から軽度、緯度を取得
   geocoded_by :address
