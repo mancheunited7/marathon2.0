@@ -12,7 +12,7 @@
     = raw sprintf(f.date_select(:day, {start_year: Time.now.year - 1,end_year: Time.now.year, order: [ :year, :month, :day ], use_month_numbers: true, date_separator: '%s'}, {class: "form-control input-lg date_time"}),'年 ', '月 ') + '日'
   .field
     %h4= f.label :"#{t '.competition_name'}"
-    = f.text_field :competition_name, class: "form-control input-lg form_size"
+    = f.text_field :competition_name, class: "form-control input-lg form_size", id: "competition_name"
   .field
     %h4= f.label :"#{t '.address'}"
     = f.text_field :address, placeholder: "#{t '.competition_address'}", class: "form-control input-lg form_size"

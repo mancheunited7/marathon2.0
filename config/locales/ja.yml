@@ -233,16 +233,6 @@ ja:
     new:
       title: 練習内容を記録しよう
       practice_day: 練習日を設定しよう
-      weather_conditions: 気象条件を入力しよう
-      weather: 天気
-      temperature: 気温
-      humidity: 湿度
-      wind_speed: 風速
-      run_distance: 走った距離を記録しよう
-      run_time: 走った時間を記録しよう
-      heart_rate: 心拍数を記録しよう
-      after_weight: 体重を記録しよう
-      after_body_fat: 体脂肪率を入力しよう
       paractice_content: 練習内容を記録しよう
       practice_photo: 練習の写真を投稿しよう
   competition_results:
@@ -251,11 +241,11 @@ ja:
       competition_day: 大会の開催日を入力しよう
       competition_name: 大会名を入力しよう
       address: 開催地を入力しよう
+      competition_address: 【都道府県市区町村 or スタート地点】 を入力してね
       competition_content: 大会を振り返ろう
       competition_photo: 大会の思い出を投稿しよう
       competition_point: 大会を評価しよう
       competition_memo: 大会について一言
-      competition_address: 【都道府県市区町村 or スタート地点】 を入力してください
     form:
       weather_conditions: 気象条件を入力しよう
       weather: 天気
@@ -263,7 +253,7 @@ ja:
       humidity: 湿度
       wind_speed: 風速
       run_distance: 走った距離を入力しよう
-      distance_caution: （ハーフは21.0975km、フルは42.195kmで入力してください）
+      distance_caution: （ハーフは21.0975km、フルは42.195kmで入力をお願い）
       run_time: タイムを入力しよう
       heart_rate: 心拍数を入力しよう
       after_weight: 体重を入力しよう
@@ -292,6 +282,7 @@ ja:
       competition_place: 開催場所
       competition_point: 大会の評価
       competition_map: ここ走ったよ〜
+      competition_map_caution: （マーカーをクリックすると、大会名が表示されるよ）
   users:
     index:
       title: ユーザー一覧

@@ -57,13 +57,28 @@
       %td= competition_point(result)
       /%td= image_tag(result.competition_result_photo, size: "50x50")
 %h3= t '.competition_map'
+%h5= t '.competition_map_caution'
 - unless @competition_results.empty?
   #map
   :javascript
+    var mapdata = #{raw @map.to_json};
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(#{raw @map.to_json});
+      markers = handler.addMarkers(mapdata);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
       handler.getMap().setZoom(5);
+
+      $.each(mapdata, function(json, number){
+        json.marker = markers[number];
+      });
+
+      $.each(mapdata, function(json){
+        google.maps.event.addListener(json.marker.getServiceObject(), "click", function() {
+          openinfowindow = new google.maps.InfoWindow({
+            content: this.serviceObject.infowindow
+          });
+          openinfowindow.open(this.serviceObject.map, this.serviceObject);
+        });
+      });
     });
