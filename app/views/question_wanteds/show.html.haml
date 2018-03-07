@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Big category:
+  = @question_wanted.big_category
+%p
+  %b Small category:
+  = @question_wanted.small_category
+%p
+  %b User:
+  = @question_wanted.user_id
+%p
+  %b Title:
+  = @question_wanted.title
+%p
+  %b Content:
+  = @question_wanted.content
+%p
+  %b State:
+  = @question_wanted.state
+%p
+  %b Comment:
+  = @question_wanted.comment
+%p
+  %b Stock:
+  = @question_wanted.stock
+
+= link_to 'Edit', edit_question_wanted_path(@question_wanted)
+\|
+= link_to 'Back', question_wanteds_path

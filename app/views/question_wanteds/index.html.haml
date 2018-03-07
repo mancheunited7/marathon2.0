@@ -1,0 +1,35 @@
+%h1 Listing question_wanteds
+
+%table
+  %thead
+    %tr
+      %th Big category
+      %th Small category
+      %th User
+      %th Title
+      %th Content
+      %th State
+      %th Comment
+      %th Stock
+      %th
+      %th
+      %th
+
+  %tbody
+    - @question_wanteds.each do |question_wanted|
+      %tr
+        %td= question_wanted.big_category
+        %td= question_wanted.small_category
+        %td= question_wanted.user_id
+        %td= question_wanted.title
+        %td= question_wanted.content
+        %td= question_wanted.state
+        %td= question_wanted.comment
+        %td= question_wanted.stock
+        %td= link_to 'Show', question_wanted
+        %td= link_to 'Edit', edit_question_wanted_path(question_wanted)
+        %td= link_to 'Destroy', question_wanted, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Question wanted', new_question_wanted_path
