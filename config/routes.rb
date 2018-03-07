@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
   get 'search', to: 'competition_infos#search'
+  resources :question_wanteds, only:[:index, :new]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

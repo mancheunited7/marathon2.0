@@ -1,0 +1,2 @@
+class BigCatergory < ApplicationRecord
+end

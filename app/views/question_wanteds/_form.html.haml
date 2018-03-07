@@ -1,0 +1,22 @@
+= form_for(@question_wanted) do |f|
+  - if @question_wanted.errors.any?
+    #error_explanation.alert.alert-danger
+      %h2= @question_wanted.errors.count.to_s + "件のエラーがあります。"
+      %ul
+      - @question_wanted.errors.full_messages.each do |msg|
+        %li = msg
+  %br/
+  .field
+    %h4= f.label :"#{t '.catergory'}"
+    = collection_select :question_wanted, :big_catergories_id, BigCatergory.all, :id, :catergory, {}, class: "form-control", id: "big_area"
+    = render partial: 'select_small_catergory', locals:{big_catergories_id: BigCatergory.first.id }
+    = hidden_field :big_catergory, id: "big_catergory"
+    = hidden_field :small_catergory, id: "small_catergory"
+  .field
+    %h4= f.label :"#{t '.title'}"
+    = f.text_field :title, class: "form-control input-lg form_size "
+  .field
+    %h4= f.label :"#{t '.content'}"
+    = f.text_area :content, rows: "5", class: "form-control input-lg form_size "
+  .button-field
+  = f.submit :"#{t '.submit'}", class: "btn btn-lg btn_submit"

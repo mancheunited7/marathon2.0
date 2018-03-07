@@ -299,3 +299,11 @@ ja:
       competition_site: 大会サイト
       search: 大会検索
       search_conditions: 【検索条件を入力してください】
+  question_wanteds:
+    new:
+      title: 質問 & 募集コーナー
+    form:
+      catergory: カテゴリを選択しよう
+      title: タイトルを入力しよう
+      content: 質問/募集の内容を入力しよう
+      submit: 投稿する
